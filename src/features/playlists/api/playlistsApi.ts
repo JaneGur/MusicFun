@@ -1,6 +1,6 @@
 // Во избежание ошибок импорт должен быть из `@reduxjs/toolkit/query/react`
 import type {
-    CreatePlaylistArgs,
+    CreatePlaylistArgs, FetchPlaylistsArgs,
     PlaylistData,
     PlaylistsResponse,
     UpdatePlaylistArgs
@@ -14,11 +14,12 @@ export const playlistsApi = baseApi.injectEndpoints({
     endpoints: build => ({
         // Типизация аргументов (<возвращаемый тип, тип query аргументов (`QueryArg`)>)
         // `query` по умолчанию создает запрос `get` и указание метода необязательно
-        fetchPlaylists: build.query<PlaylistsResponse, void>({
-            query: () => {
+        fetchPlaylists: build.query<PlaylistsResponse, FetchPlaylistsArgs>({
+            query: (params) => {
                 return {
                     method: 'get',
                     url: `playlists`,
+                    params
                 }
             },
             providesTags: ['Playlist']
@@ -59,9 +60,13 @@ export const playlistsApi = baseApi.injectEndpoints({
             },
             invalidatesTags: ['Playlist'],
         }),
+        deletePlaylistCover: build.mutation<void, { playlistId: string }>({
+            query: ({ playlistId }) => ({ url: `playlists/${playlistId}/images/main`, method: 'delete' }),
+            invalidatesTags: ['Playlist'],
+        }),
     }),
 })
 
 // `createApi` создает объект `API`, который содержит все эндпоинты в виде хуков,
 // определенные в свойстве `endpoints`
-export const { useFetchPlaylistsQuery, useCreatePlaylistMutation, useDeletePlaylistMutation, useUpdatePlaylistMutation, useUploadPlaylistCoverMutation } = playlistsApi
+export const { useFetchPlaylistsQuery, useCreatePlaylistMutation, useDeletePlaylistMutation, useUpdatePlaylistMutation, useUploadPlaylistCoverMutation, useDeletePlaylistCoverMutation } = playlistsApi
