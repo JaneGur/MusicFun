@@ -1,6 +1,7 @@
 import {useUpdatePlaylistMutation} from "@/features/playlists/api/playlistsApi.ts";
 import type {SubmitHandler, UseFormHandleSubmit, UseFormRegister} from "react-hook-form";
 import type {UpdatePlaylistArgs} from "@/features/playlists/api/playlistsApi.types.ts";
+import s from './EditPlaylistForm.module.css';
 
 type Props = {
     playlistId: string
@@ -27,18 +28,20 @@ export const EditPlaylistForm = ({
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
             <h2>Edit playlist</h2>
-            <div>
-                <input {...register('title')} placeholder={'title'} />
+            <div className={s.formGroup}>
+                <input {...register('title')} placeholder={'Playlist title'} />
             </div>
-            <div>
-                <input {...register('description')} placeholder={'description'} />
+            <div className={s.formGroup}>
+                <input {...register('description')} placeholder={'Playlist description'} />
             </div>
-            <button type={'submit'}>save</button>
-            <button type={'button'} onClick={() => editPlaylist(null)}>
-                cancel
-            </button>
+            <div className={s.actions}>
+                <button type={'submit'} className={s.saveButton}>Save</button>
+                <button type={'button'} className={s.cancelButton} onClick={() => editPlaylist(null)}>
+                    Cancel
+                </button>
+            </div>
         </form>
     )
 }

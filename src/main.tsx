@@ -1,5 +1,6 @@
 import {createRoot} from 'react-dom/client'
 import './index.css'
+import 'react-toastify/dist/ReactToastify.css'
 import {App} from './app/ui/App/App.tsx'
 import {BrowserRouter} from "react-router";
 import {store} from "@/app/model/store.ts";

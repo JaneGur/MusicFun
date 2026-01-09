@@ -1,4 +1,5 @@
 import type {PlaylistAttributes} from "@/features/playlists/api/playlistsApi.types.ts";
+import s from './../PlaylistItem.module.css';
 
 type Props = {
     attributes: PlaylistAttributes
@@ -7,9 +8,9 @@ type Props = {
 export const PlaylistDescription = ({ attributes }: Props) => {
     return (
         <>
-            <div>title: {attributes.title}</div>
-            <div>description: {attributes.description}</div>
-            <div>userName: {attributes.user.name}</div>
+            <h3 className={s.title}>{attributes.title}</h3>
+            {attributes.description && <p className={s.description}>{attributes.description}</p>}
+            <div className={s.description}>by {attributes.user.name}</div>
         </>
     )
 }
