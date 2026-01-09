@@ -19,10 +19,6 @@ export const PlaylistsPage = () => {
             pageNumber: currentPage,
             pageSize,
         },
-        {
-            pollingInterval: 3000,
-            skipPollingIfUnfocused: true,
-        }
     )
 
     const changePageSizeHandler = (size: number) => {
