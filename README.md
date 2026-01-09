@@ -1,249 +1,249 @@
-# 🎵 MusicFun - Playlist Manager
+# 🎵 MusicFun - Менеджер плейлистов
 
-A modern, stylish music playlist management application built with React, Redux Toolkit, and TypeScript. This application provides a beautiful and intuitive interface for creating, managing, and organizing your music playlists.
+Современное и стильное приложение для управления музыкальными плейлистами, созданное на React, Redux Toolkit и TypeScript. Приложение предоставляет красивый и интуитивно понятный интерфейс для создания, управления и организации ваших музыкальных плейлистов.
 
 ![React](https://img.shields.io/badge/React-19.1.1-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-2.11.2-764ABC?style=for-the-badge&logo=redux&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7.0.6-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-## ✨ Features
+## ✨ Возможности
 
-- 🎨 **Modern Dark Theme UI** - Beautiful gradient design with smooth animations
-- 📋 **Playlist Management** - Create, edit, and delete playlists with ease
-- 🔍 **Search Functionality** - Real-time search with debouncing for optimal performance
-- 📄 **Pagination** - Efficient data browsing with customizable page sizes
-- 🎯 **Type-Safe** - Full TypeScript support for better code quality
-- ⚡ **Fast & Responsive** - Built with Vite for lightning-fast development and optimized production builds
-- 🎭 **Component-Based Architecture** - Clean, maintainable, and scalable code structure
-- 🔄 **State Management** - Redux Toolkit with RTK Query for efficient data fetching and caching
+- 🎨 **Современная тёмная тема** - Красивый градиентный дизайн с плавными анимациями
+- 📋 **Управление плейлистами** - Создавайте, редактируйте и удаляйте плейлисты с лёгкостью
+- 🔍 **Функция поиска** - Поиск в реальном времени с debouncing для оптимальной производительности
+- 📄 **Пагинация** - Эффективный просмотр данных с настраиваемым размером страницы
+- 🎯 **Типобезопасность** - Полная поддержка TypeScript для лучшего качества кода
+- ⚡ **Быстро и отзывчиво** - Создано с Vite для молниеносной разработки и оптимизированных production сборок
+- 🎭 **Компонентная архитектура** - Чистая, поддерживаемая и масштабируемая структура кода
+- 🔄 **Управление состоянием** - Redux Toolkit с RTK Query для эффективной загрузки данных и кэширования
 
-## 🚀 Tech Stack
+## 🚀 Технологический стек
 
-### Core
-- **React 19.1.1** - Latest React with modern features
-- **TypeScript 5.8.3** - Type-safe development experience
-- **Vite 7.0.6** - Next-generation frontend tooling
+### Ядро
+- **React 19.1.1** - Последняя версия React с современными возможностями
+- **TypeScript 5.8.3** - Типобезопасная разработка
+- **Vite 7.0.6** - Инструментарий фронтенда нового поколения
 
-### State Management
-- **Redux Toolkit 2.11.2** - Simplified Redux development
-- **RTK Query** - Powerful data fetching and caching tool
-- **React Redux 9.2.0** - Official React bindings for Redux
+### Управление состоянием
+- **Redux Toolkit 2.11.2** - Упрощённая разработка с Redux
+- **RTK Query** - Мощный инструмент для загрузки данных и кэширования
+- **React Redux 9.2.0** - Официальные привязки React для Redux
 
-### Routing & Forms
-- **React Router 7.11.0** - Declarative routing for React
-- **React Hook Form 7.69.0** - Performant, flexible forms with easy validation
+### Роутинг и формы
+- **React Router 7.11.0** - Декларативный роутинг для React
+- **React Hook Form 7.69.0** - Производительные, гибкие формы с простой валидацией
 
-### UI & Notifications
-- **React Toastify 11.0.5** - Beautiful toast notifications
-- **CSS Modules** - Scoped styling for components
+### UI и уведомления
+- **React Toastify 11.0.5** - Красивые toast-уведомления
+- **CSS Modules** - Изолированная стилизация компонентов
 
-### Development Tools
-- **ESLint 9.32.0** - Code quality and consistency
-- **Prettier 3.6.2** - Code formatting
-- **TypeScript ESLint** - TypeScript-specific linting rules
+### Инструменты разработки
+- **ESLint 9.32.0** - Качество и согласованность кода
+- **Prettier 3.6.2** - Форматирование кода
+- **TypeScript ESLint** - Правила линтинга для TypeScript
 
-## 📦 Installation
+## 📦 Установка
 
-### Prerequisites
-- Node.js (v18 or higher recommended)
-- npm, pnpm, or yarn
+### Предварительные требования
+- Node.js (рекомендуется v18 или выше)
+- npm, pnpm или yarn
 
-### Setup
+### Настройка
 
-1. **Clone the repository**
+1. **Клонируйте репозиторий**
 ```bash
 git clone <repository-url>
 cd musicfun
 ```
 
-2. **Install dependencies**
+2. **Установите зависимости**
 ```bash
-# Using npm
+# Используя npm
 npm install
 
-# Using pnpm
+# Используя pnpm
 pnpm install
 
-# Using yarn
+# Используя yarn
 yarn install
 ```
 
-3. **Environment Setup**
-Create a `.env` file in the root directory (if needed for API configuration):
+3. **Настройка окружения**
+Создайте файл `.env` в корневой директории (при необходимости для настройки API):
 ```env
-# Add your environment variables here
+# Добавьте переменные окружения здесь
 VITE_API_URL=your_api_url
 ```
 
-## 🎮 Usage
+## 🎮 Использование
 
-### Development
+### Разработка
 
-Start the development server with hot module replacement:
+Запустите сервер разработки с горячей перезагрузкой модулей:
 
 ```bash
 npm run dev
-# or
+# или
 pnpm dev
-# or
+# или
 yarn dev
 ```
 
-The application will be available at `http://localhost:5173`
+Приложение будет доступно по адресу `http://localhost:5173`
 
-### Production Build
+### Production сборка
 
-Create an optimized production build:
+Создайте оптимизированную production сборку:
 
 ```bash
 npm run build
-# or
+# или
 pnpm build
-# or
+# или
 yarn build
 ```
 
-### Preview Production Build
+### Предварительный просмотр production сборки
 
-Preview the production build locally:
+Просмотрите production сборку локально:
 
 ```bash
 npm run preview
-# or
+# или
 pnpm preview
-# or
+# или
 yarn preview
 ```
 
-### Linting
+### Линтинг
 
-Run ESLint to check code quality:
+Запустите ESLint для проверки качества кода:
 
 ```bash
 npm run lint
-# or
+# или
 pnpm lint
-# or
+# или
 yarn lint
 ```
 
-## 📁 Project Structure
+## 📁 Структура проекта
 
 ```
 musicfun/
-├── public/                 # Static assets
+├── public/                 # Статические ресурсы
 │   ├── vite.svg
 │   └── ...
 ├── src/
-│   ├── app/               # App configuration
-│   │   ├── baseApi.ts    # RTK Query base API configuration
+│   ├── app/               # Конфигурация приложения
+│   │   ├── baseApi.ts    # Базовая конфигурация RTK Query API
 │   │   ├── model/
-│   │   │   └── store.ts  # Redux store configuration
+│   │   │   └── store.ts  # Конфигурация Redux store
 │   │   └── ui/
-│   │       ├── App/      # Main App component
-│   │       └── MainPage/ # Main page component
-│   ├── assets/           # Images, fonts, etc.
-│   ├── common/           # Shared code
-│   │   ├── components/   # Reusable components
+│   │       ├── App/      # Главный компонент приложения
+│   │       └── MainPage/ # Главная страница
+│   ├── assets/           # Изображения, шрифты и т.д.
+│   ├── common/           # Общий код
+│   │   ├── components/   # Переиспользуемые компоненты
 │   │   │   ├── Header/
 │   │   │   ├── PageNotFound/
 │   │   │   └── components/
 │   │   │       └── Pagination/
-│   │   ├── enums/        # Enumerations
-│   │   ├── hooks/        # Custom hooks
-│   │   ├── routing/      # Routing configuration
-│   │   ├── types/        # TypeScript types
-│   │   └── utils/        # Utility functions
-│   ├── features/         # Feature-based modules
-│   │   ├── auth/         # Authentication
+│   │   ├── enums/        # Перечисления
+│   │   ├── hooks/        # Пользовательские хуки
+│   │   ├── routing/      # Конфигурация роутинга
+│   │   ├── types/        # TypeScript типы
+│   │   └── utils/        # Утилитарные функции
+│   ├── features/         # Модули по функциональности
+│   │   ├── auth/         # Аутентификация
 │   │   │   └── ui/
 │   │   │       └── ProfilePage/
-│   │   ├── playlists/    # Playlist management
-│   │   │   ├── api/      # API layer with RTK Query
-│   │   │   └── ui/       # UI components
+│   │   ├── playlists/    # Управление плейлистами
+│   │   │   ├── api/      # API слой с RTK Query
+│   │   │   └── ui/       # UI компоненты
 │   │   │       └── PlaylistsPage/
 │   │   │           ├── CreatePlaylistForm/
 │   │   │           ├── EditPlaylistForm/
 │   │   │           ├── PlaylistItem/
 │   │   │           └── PlaylistsList/
-│   │   └── tracks/       # Tracks management
+│   │   └── tracks/       # Управление треками
 │   │       └── ui/
 │   │           └── TracksPage/
-│   ├── index.css         # Global styles
-│   ├── main.tsx          # Application entry point
-│   └── vite-env.d.ts     # Vite type definitions
-├── index.html            # HTML template
-├── package.json          # Dependencies and scripts
-├── tsconfig.json         # TypeScript configuration
-├── vite.config.ts        # Vite configuration
-└── README.md            # This file
+│   ├── index.css         # Глобальные стили
+│   ├── main.tsx          # Точка входа в приложение
+│   └── vite-env.d.ts     # Определения типов Vite
+├── index.html            # HTML шаблон
+├── package.json          # Зависимости и скрипты
+├── tsconfig.json         # Конфигурация TypeScript
+├── vite.config.ts        # Конфигурация Vite
+└── README.md            # Этот файл
 ```
 
-## 🎨 Design System
+## 🎨 Дизайн-система
 
-The application uses a modern design system with:
+Приложение использует современную дизайн-систему с:
 
-### Color Palette
-- **Primary**: Indigo gradient (`#6366f1` to `#4f46e5`)
-- **Secondary**: Pink (`#ec4899`)
-- **Background**: Dark slate (`#0f172a`)
-- **Surface**: Lighter slate (`#1e293b`)
-- **Text**: Multiple shades for hierarchy
+### Цветовая палитра
+- **Основной**: Indigo градиент (`#6366f1` до `#4f46e5`)
+- **Вторичный**: Розовый (`#ec4899`)
+- **Фон**: Тёмный slate (`#0f172a`)
+- **Поверхность**: Светлее slate (`#1e293b`)
+- **Текст**: Множество оттенков для иерархии
 
-### Typography
-- **Font Family**: Inter (with system font fallbacks)
-- **Heading Styles**: Gradient text effects on h1 elements
-- **Body Text**: Clear hierarchy with different weight and color variations
+### Типографика
+- **Семейство шрифтов**: Inter (с системными шрифтами как fallback)
+- **Стили заголовков**: Градиентные текстовые эффекты на элементах h1
+- **Основной текст**: Чёткая иерархия с различными весом и цветовыми вариациями
 
-### Component Styling
-- **Cards**: Elevated with shadows and hover effects
-- **Buttons**: Gradient backgrounds with smooth transitions
-- **Inputs**: Focus states with glow effects
-- **Animations**: Smooth fade-in and slide-up effects
+### Стилизация компонентов
+- **Карточки**: Приподнятые с тенями и эффектами при наведении
+- **Кнопки**: Градиентные фоны с плавными переходами
+- **Поля ввода**: Состояния фокуса с эффектами свечения
+- **Анимации**: Плавные эффекты fade-in и slide-up
 
-## 🔧 Configuration Files
+## 🔧 Конфигурационные файлы
 
-- **tsconfig.json** - TypeScript compiler options
-- **vite.config.ts** - Vite build configuration
-- **eslint.config.js** - ESLint rules and settings
-- **.prettierrc** - Code formatting rules (if present)
+- **tsconfig.json** - Параметры компилятора TypeScript
+- **vite.config.ts** - Конфигурация сборки Vite
+- **eslint.config.js** - Правила и настройки ESLint
+- **.prettierrc** - Правила форматирования кода (если есть)
 
-## 🤝 Contributing
+## 🤝 Вклад в проект
 
-Contributions are welcome! Here's how you can help:
+Вклады приветствуются! Вот как вы можете помочь:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Форкните репозиторий
+2. Создайте ветку для фичи (`git checkout -b feature/amazing-feature`)
+3. Закоммитьте изменения (`git commit -m 'Добавлена потрясающая фича'`)
+4. Запушьте в ветку (`git push origin feature/amazing-feature`)
+5. Откройте Pull Request
 
-### Code Style Guidelines
+### Рекомендации по стилю кода
 
-- Use TypeScript for all new code
-- Follow the existing component structure
-- Use CSS Modules for styling
-- Write meaningful commit messages
-- Ensure code passes ESLint checks
+- Используйте TypeScript для всего нового кода
+- Следуйте существующей структуре компонентов
+- Используйте CSS Modules для стилизации
+- Пишите осмысленные сообщения коммитов
+- Убедитесь, что код проходит проверки ESLint
 
-## 📝 License
+## 📝 Лицензия
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Этот проект лицензирован под лицензией MIT - смотрите файл LICENSE для подробностей.
 
-## 🙏 Acknowledgments
+## 🙏 Благодарности
 
-- Built with ❤️ using modern web technologies
-- Inspired by modern music streaming applications
-- UI/UX design focused on user experience and accessibility
+- Создано с ❤️ используя современные веб-технологии
+- Вдохновлено современными приложениями для потоковой передачи музыки
+- UI/UX дизайн сфокусирован на пользовательском опыте и доступности
 
-## 📞 Support
+## 📞 Поддержка
 
-If you have any questions or run into issues, please:
-- Check the documentation
-- Search existing issues
-- Create a new issue with detailed information
+Если у вас есть вопросы или возникли проблемы, пожалуйста:
+- Проверьте документацию
+- Поищите среди существующих issues
+- Создайте новый issue с подробной информацией
 
 ---
 
-**Happy playlist managing! 🎵✨**
+**Приятного управления плейлистами! 🎵✨**
