@@ -1,10 +1,11 @@
 import {useUpdatePlaylistMutation} from "@/features/playlists/api/playlistsApi.ts";
 import type {SubmitHandler, UseFormHandleSubmit, UseFormRegister} from "react-hook-form";
-import type {UpdatePlaylistArgs} from "@/features/playlists/api/playlistsApi.types.ts";
+import type {PlaylistData, UpdatePlaylistArgs} from "@/features/playlists/api/playlistsApi.types.ts";
 import s from './EditPlaylistForm.module.css';
 
 type Props = {
     playlistId: string
+    playlist: PlaylistData | null
     register: UseFormRegister<UpdatePlaylistArgs>
     handleSubmit: UseFormHandleSubmit<UpdatePlaylistArgs>
     editPlaylist: (playlist: null) => void
@@ -13,6 +14,7 @@ type Props = {
 
 export const EditPlaylistForm = ({
                                      playlistId,
+                                     playlist,
                                      handleSubmit,
                                      register,
                                      editPlaylist,
@@ -29,17 +31,25 @@ export const EditPlaylistForm = ({
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-            <h2>Edit playlist</h2>
+            <h2>Редактирование плейлиста</h2>
             <div className={s.formGroup}>
-                <input {...register('title')} placeholder={'Playlist title'} />
+                <input 
+                    {...register('title')} 
+                    placeholder={'Название плейлиста'}
+                    defaultValue={playlist?.attributes.title || ''}
+                />
             </div>
             <div className={s.formGroup}>
-                <input {...register('description')} placeholder={'Playlist description'} />
+                <input 
+                    {...register('description')} 
+                    placeholder={'Описание плейлиста'}
+                    defaultValue={playlist?.attributes.description || ''}
+                />
             </div>
             <div className={s.actions}>
-                <button type={'submit'} className={s.saveButton}>Save</button>
+                <button type={'submit'} className={s.saveButton}>Сохранить</button>
                 <button type={'button'} className={s.cancelButton} onClick={() => editPlaylist(null)}>
-                    Cancel
+                    Отмена
                 </button>
             </div>
         </form>

@@ -13,13 +13,14 @@ type Props = {
 
 export const PlaylistsList = ({ playlists, isPlaylistsLoading }: Props) => {
     const [playlistId, setPlaylistId] = useState<string | null>(null)
+    const [editingPlaylist, setEditingPlaylist] = useState<PlaylistData | null>(null)
 
     const { register, handleSubmit, reset } = useForm<UpdatePlaylistArgs>()
 
     const [deletePlaylist] = useDeletePlaylistMutation()
 
     const deletePlaylistHandler = (playlistId: string) => {
-        if (confirm('Are you sure you want to delete the playlist?')) {
+        if (confirm('Вы уверены, что хотите удалить плейлист?')) {
             deletePlaylist(playlistId)
         }
     }
@@ -27,6 +28,7 @@ export const PlaylistsList = ({ playlists, isPlaylistsLoading }: Props) => {
     const editPlaylistHandler = (playlist: PlaylistData | null) => {
         if (playlist) {
             setPlaylistId(playlist.id)
+            setEditingPlaylist(playlist)
             reset({
                 title: playlist.attributes.title,
                 description: playlist.attributes.description,
@@ -34,12 +36,18 @@ export const PlaylistsList = ({ playlists, isPlaylistsLoading }: Props) => {
             })
         } else {
             setPlaylistId(null)
+            setEditingPlaylist(null)
+            reset({
+                title: '',
+                description: '',
+                tagIds: [],
+            })
         }
     }
 
     return (
         <div className={s.items}>
-            {!playlists.length && !isPlaylistsLoading && <h2>Playlists not found</h2>}
+            {!playlists.length && !isPlaylistsLoading && <h2>Плейлисты не найдены</h2>}
             {playlists.map(playlist => {
                 const isEditing = playlistId === playlist.id
 
@@ -48,6 +56,7 @@ export const PlaylistsList = ({ playlists, isPlaylistsLoading }: Props) => {
                         {isEditing ? (
                             <EditPlaylistForm
                                 playlistId={playlistId}
+                                playlist={editingPlaylist}
                                 handleSubmit={handleSubmit}
                                 register={register}
                                 editPlaylist={editPlaylistHandler}

@@ -16,8 +16,8 @@ export const PlaylistItem = ({ playlist, editPlaylist, deletePlaylist }: Props) 
             <div className={s.content}>
                 <PlaylistDescription attributes={playlist.attributes} />
                 <div className={s.actions}>
-                    <button className={s.editButton} onClick={() => editPlaylist(playlist)}>Edit</button>
-                    <button className={s.deleteButton} onClick={() => deletePlaylist(playlist.id)}>Delete</button>
+                    <button className={s.editButton} onClick={() => editPlaylist(playlist)}>Редактировать</button>
+                    <button className={s.deleteButton} onClick={() => deletePlaylist(playlist.id)}>Удалить</button>
                 </div>
             </div>
         </div>

@@ -16,14 +16,14 @@ export const CreatePlaylistForm = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-            <h2>Create new playlist</h2>
+            <h2>Создать новый плейлист</h2>
             <div className={s.formGroup}>
-                <input {...register('title')} placeholder={'Playlist title'} />
+                <input {...register('title')} placeholder={'Название плейлиста'} />
             </div>
             <div className={s.formGroup}>
-                <input {...register('description')} placeholder={'Playlist description'} />
+                <input {...register('description')} placeholder={'Описание плейлиста'} />
             </div>
-            <button className={s.submitButton}>Create Playlist</button>
+            <button className={s.submitButton}>Создать плейлист</button>
         </form>
     )
 }

@@ -25,11 +25,11 @@ export const PlaylistCover = ({ images, playlistId }: Props) => {
         if (!file) return
 
         if (!allowedTypes.includes(file.type)) {
-            toast('Only JPEG, PNG or GIF images are allowed', {type:'error', theme: "colored"})
+            toast('Разрешены только изображения JPEG, PNG или GIF', {type:'error', theme: "colored"})
         }
 
         if (file.size > maxSize) {
-            toast(`The file is too large (max. ${Math.round(maxSize / 1024)} KB)`, {
+            toast(`Файл слишком большой (макс. ${Math.round(maxSize / 1024)} КБ)`, {
                 type: 'error',
                 theme: 'colored',
             })
@@ -51,11 +51,11 @@ export const PlaylistCover = ({ images, playlistId }: Props) => {
                         onChange={uploadCoverHandler} 
                         className={s.fileInput}
                     />
-                    📷 Upload
+                    📷 Загрузить
                 </label>
                 {originalCover && (
                     <button onClick={() => deleteCoverHandler()} className={s.deleteCoverButton}>
-                        🗑️ Remove
+                        🗑️ Удалить
                     </button>
                 )}
             </div>
