@@ -7,7 +7,6 @@ import {Pagination} from "@/common/components/components/Pagination/Pagination.t
 import {PlaylistsList} from "@/features/playlists/ui/PlaylistsPage/PlaylistsList/PlaylistsList.tsx";
 import {PlaylistsSkeletonLoader} from "@/features/playlists/ui/PlaylistsPage/PlaylistsSkeletonLoader";
 import 'react-loading-skeleton/dist/skeleton.css';
-import {LinearProgress} from "@/common/components/LinearProgress/LinearProgress.tsx";
 
 
 export const PlaylistsPage = () => {
@@ -17,7 +16,7 @@ export const PlaylistsPage = () => {
     const [search, setSearch] = useState('')
     const debounceSearch = useDebounceValue(search)
 
-    const { data, isLoading, isFetching } = useFetchPlaylistsQuery(
+    const { data, isLoading } = useFetchPlaylistsQuery(
         {
             search: debounceSearch,
             pageNumber: currentPage,
@@ -47,14 +46,13 @@ export const PlaylistsPage = () => {
     return (
         <div className={s.container}>
             <h1>Мои плейлисты</h1>
-            <CreatePlaylistForm />
+            <CreatePlaylistForm onPlaylistCreated={() => setCurrentPage(1)} />
             <input
                 type="search"
                 placeholder={'Поиск плейлиста по названию...'}
                 onChange={searchPlaylistHandler}
             />
             <PlaylistsList playlists={data?.data || []} isPlaylistsLoading={isLoading} />
-            {isFetching && <LinearProgress />}
             <Pagination
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}

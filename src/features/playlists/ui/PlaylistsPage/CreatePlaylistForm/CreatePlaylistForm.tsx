@@ -3,7 +3,11 @@ import type {CreatePlaylistArgs} from "@/features/playlists/api/playlistsApi.typ
 import {useCreatePlaylistMutation} from "@/features/playlists/api/playlistsApi.ts";
 import s from './CreatePlaylistForm.module.css';
 
-export const CreatePlaylistForm = () => {
+type Props = {
+    onPlaylistCreated?: () => void;
+}
+
+export const CreatePlaylistForm = ({ onPlaylistCreated }: Props) => {
     const { register, handleSubmit, reset} = useForm<CreatePlaylistArgs>()
 
     const [createPlaylist] = useCreatePlaylistMutation()
@@ -11,6 +15,7 @@ export const CreatePlaylistForm = () => {
     const onSubmit: SubmitHandler<CreatePlaylistArgs> = data => {
         createPlaylist(data).unwrap().then(() => {
             reset()
+            onPlaylistCreated?.()
         })
     }
 
