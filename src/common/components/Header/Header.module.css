@@ -1,13 +1,16 @@
 .container {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
-    padding: 0 var(--spacing-2xl);
     box-shadow: var(--shadow-md);
     position: sticky;
     top: 0;
     z-index: 100;
     backdrop-filter: blur(10px);
     background: rgba(30, 41, 59, 0.8);
+    padding: 0 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .list {
